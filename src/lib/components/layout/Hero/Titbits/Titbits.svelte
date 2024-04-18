@@ -2,22 +2,11 @@
 	import { fly } from 'svelte/transition';
 
 	let data = [
-		{
-			id: 1,
-			text: 'lorem 1'
-		},
-		{
-			id: 2,
-			text: 'lorem 2'
-		},
-		{
-			id: 3,
-			text: 'lorem 3'
-		},
-		{
-			id: 4,
-			text: 'lorem 4'
-		}
+		{ id: 1, text: "It's your vibe; You can merge it as you want!", color: '--aquamarine' },
+		{ id: 2, text: 'Enjoy the mashup of your favourite artists altogether', color: '--light-red' },
+		{ id: 3, text: 'Focus on your day while we make it a blissful one', color: '--light-red' },
+		{ id: 4, text: 'Enjoy the mashup of your favourite artists altogether', color: '--light-red' },
+		{ id: 5, text: 'Focus on your day while we make it a blissful one', color: '--light-red' }
 	];
 
 	function cycleCards() {
@@ -43,7 +32,7 @@
 			<div
 				class="card"
 				in:fly={{ y: 20, delay: 200, duration: 300 }}
-				out:fly={{ y: 10, delay: 0, duration: 700 }}
+				out:fly={{ y: 10, delay: 100, duration: 1000 }}
 			>
 				{text}
 			</div>
