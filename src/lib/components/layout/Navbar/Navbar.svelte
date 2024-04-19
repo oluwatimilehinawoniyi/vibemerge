@@ -5,8 +5,9 @@
 <nav class="flex items-center justify-between">
 	<a href="/">vibemerge</a>
 
-	<Button
-		class="rounded-full w-max flex gap-2 p-1 pr-2"
+	<a
+		href="/get-started"
+		class="rounded-full w-max flex items-center text-white gap-2 p-1 pr-2"
 		style="background-color: var(--light-red)"
 	>
 		<span class="bg-white rounded-full h-8 w-8 grid place-items-center">
@@ -26,5 +27,5 @@
 			</svg>
 		</span>
 		<p class="mr-2">get started</p>
-	</Button>
+	</a>
 </nav>

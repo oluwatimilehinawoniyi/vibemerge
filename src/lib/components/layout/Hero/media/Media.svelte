@@ -59,17 +59,36 @@
 			videoElement.removeEventListener('timeupdate', updateProgress);
 		};
 	});
+
+	function handleProgressBarClick(index: number) {
+		currentIndex = index;
+		currentVideoSrc = videos[currentIndex];
+		videoElement.src = currentVideoSrc;
+		videoElement.load();
+		videoElement.play();
+
+		progress = progress.map(() => 0);
+
+		for (let i = 0; i < index; i++) {
+			progress[i] = 100;
+		}
+
+		progress[currentIndex] = 0;
+	}
 </script>
 
 <div class="media w-full h-full">
 	<div class="progress_stack flex gap-4">
 		{#each progress as p, index (index)}
-			<div class="progress-bar h-2 rounded-full">
+			<button
+				class="progress-bar h-2 rounded-full cursor-pointer"
+				on:click={() => handleProgressBarClick(index)}
+			>
 				<div
 					style="height: 100%; background-color: var({data[currentIndex]
 						.color}); width: {p}%; transition: width 0.5s ease;"
 				></div>
-			</div>
+			</button>
 		{/each}
 	</div>
 	<video
