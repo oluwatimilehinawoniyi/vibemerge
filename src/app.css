@@ -83,8 +83,9 @@
 }
 
 :root {
-	--ultra-violet: #5e548eff;
+  --ultra-violet: #5e548eff;
 	--vista-blue: #9face6ff;
 	--aquamarine: #29ffa6ff;
 	--light-red: #ff6b6bff;
+  --faded-light-red: rgba(255, 107, 107, 0.3);
 }

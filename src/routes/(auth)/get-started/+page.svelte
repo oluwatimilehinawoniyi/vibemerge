@@ -1,13 +1,62 @@
 <script lang="ts">
-	import authImg from '$lib/assets/images/auth-img.jpg';
+	let username = '';
+	let password = '';
 </script>
 
-<section class="flex items-center p-4 h-screen">
-	<div class="img w-1/2 h-full rounded-[1rem] overflow-hidden relative">
-		<a href="/" class="absolute top-4 left-4 text-white">vibemerge</a>
-		<img src={authImg} alt="" class="w-full h-full object-cover" />
+<form
+	class="forms w-2/3 mx-auto p-4 text-white flex items-start justify-center flex-col gap-10 h-full"
+>
+	<div class="relative field">
+		<input type="text" class="h-6" bind:value={username} />
+		<label for="username" class="absolute capitalize" class:has-value={username.trim() !== ''}
+			>your spotify username</label
+		>
 	</div>
-	<div class="forms w-1/2">
-		
+
+	<div class="relative field">
+		<input type="password" class="h-6" bind:value={password} />
+		<label for="password" class="absolute capitalize" class:has-value={password.trim() !== ''}
+			>your spotify password</label
+		>
 	</div>
-</section>
+
+	<button>merge</button>
+</form>
+
+<style>
+	.field {
+		width: 100%;
+	}
+
+	.field label {
+		bottom: 2px;
+		left: 0;
+		pointer-events: none;
+		width: 100%;
+		opacity: 0.5;
+		font-size: 0.8rem;
+		transition: all 0.3s linear;
+	}
+
+	input {
+		font-size: .9rem;
+		background-color: transparent;
+		outline: none;
+		border: none;
+		border-bottom: 1px solid #fff;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+		padding-left: 5px;
+	}
+
+	.field input:focus {
+		background-color: transparent;
+	}
+
+	.field input:focus ~ label,
+	.field label.has-value {
+		opacity: 0.7;
+		transform: translateY(-120%);
+	}
+</style>
