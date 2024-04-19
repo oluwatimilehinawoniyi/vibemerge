@@ -4,9 +4,8 @@
 	let data = [
 		{ id: 1, text: "It's your vibe; You can merge it as you want!", color: '--aquamarine' },
 		{ id: 2, text: 'Enjoy the mashup of your favourite artists altogether', color: '--light-red' },
-		{ id: 3, text: 'Focus on your day while we make it a blissful one', color: '--light-red' },
-		{ id: 4, text: 'Enjoy the mashup of your favourite artists altogether', color: '--light-red' },
-		{ id: 5, text: 'Focus on your day while we make it a blissful one', color: '--light-red' }
+		{ id: 3, text: 'Focus on your day while we make it a blissful one', color: '--ultra-violet' },
+		{ id: 4, text: 'Enjoy the mashup of your favourite artists altogether', color: '--vista-blue' }
 	];
 
 	function cycleCards() {
@@ -23,14 +22,13 @@
 			<h3 class="text-xl font-semibold text-[var(--aquamarine)]">
 				All those jams <br /> merged on the go
 			</h3>
-
-			<!-- <p class="text-sm mt-2 w-[85%]">Feel your favourite artists like never before</p> -->
 		</div>
 	</div>
 	<div class="card_stacks">
-		{#each data.slice(0, 4) as { id, text } (id)}
+		{#each data as { id, text, color } (id)}
 			<div
 				class="card"
+				style="background-color: var({color});"
 				in:fly={{ y: 20, delay: 200, duration: 300 }}
 				out:fly={{ y: 10, delay: 100, duration: 1000 }}
 			>
@@ -86,14 +84,12 @@
 		display: grid;
 		place-items: center;
 		background-color: var(--light-red);
-		background-color: #fff;
 		transition: transform 0.5s ease;
 
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		height: 85%;
-		border: 1px solid red;
 		border-radius: 1rem;
 	}
 

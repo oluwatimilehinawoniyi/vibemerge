@@ -5,11 +5,6 @@
 	import video2 from '$lib/assets/videos/video2.mp4';
 	import video3 from '$lib/assets/videos/video3.mp4';
 
-	// --ultra-violet: #5e548eff;
-	// --vista-blue: #9face6ff;
-	// --aquamarine: #29ffa6ff;
-	// --light-red: #ff6b6bff;
-
 	const data = [
 		{ id: 1, text: "It's your vibe; You can merge it as you want!", color: '--aquamarine' },
 		{ id: 2, text: 'Enjoy the mashup of your favourite artists altogether', color: '--light-red' },
